@@ -1,0 +1,7 @@
+gcc -fPIC -shared -o libMyJni.so MyJni.c -I. -I{$JAVA_HOME}/include -I{$JAVA_HOME}/include/linux
+export LD_LIBRARY_PATH=.
+java TestJni
+or
+java -Djava.library.path=. TestJni
+
+javap -s TestJni
